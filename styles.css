@@ -1,3 +1,10 @@
+:root {
+  --text-color: #f2f5ff;
+  --muted-text-color: #d0daed;
+  --link-color: #c4ddff;
+  --link-hover-color: #e1eeff;
+}
+
 *{
 box-sizing: border-box;
 margin: 0;
@@ -5,7 +12,7 @@ padding: 0;
 }
 body{
   background-color: black;
-  color: white;
+  color: var(--text-color);
 }
 
 h1{
@@ -17,7 +24,7 @@ h2{
    font-family: Arial, sans-serif;
     font-size: 1.1rem;
     font-weight: normal;
-    color: black;
+    color: var(--text-color);
     max-width: 450px;
     line-height: 1.7;
 }
@@ -35,6 +42,7 @@ h2{
   position: relative;
   z-index: 1;
   padding: 2rem;
+  text-shadow: 0 1px 2px #000, 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 .links{
     display: flex;
@@ -45,11 +53,13 @@ h2{
   }
 .links a{
     font-family: Arial, sans-serif;
-    color: black;
+    color: var(--link-color);
     text-decoration: none;
 }
 .links a:hover{
-  color: red;
+  color: var(--link-hover-color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 h3 {
     padding: 1rem
@@ -92,17 +102,17 @@ footer{
     gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
-.blog-shell a { color: #f2b5b5; text-underline-offset: 0.2em; }
-.blog-shell a:hover { color: #fff; }
+.blog-shell a { color: var(--link-color); text-underline-offset: 0.2em; }
+.blog-shell a:hover { color: var(--link-hover-color); }
 .blog-shell a:focus-visible, .links a:focus-visible {
-    outline: 2px solid #f2b5b5;
+    outline: 2px solid var(--link-color);
     outline-offset: 5px;
 }
 .blog-shell h1 { font-size: clamp(2.5rem, 7vw, 4rem); line-height: 1.15; }
-.blog-shell h2 { color: white; font-size: 1.5rem; font-weight: bold; max-width: none; margin: 2rem 0 1rem; }
+.blog-shell h2 { color: var(--text-color); font-size: 1.5rem; font-weight: bold; max-width: none; margin: 2rem 0 1rem; }
 .blog-shell h3 { font-size: 1.2rem; padding: 0; }
 .blog-intro { font-size: 1.15rem; margin: 1.5rem 0; }
-.blog-empty, .blog-shell time, .blog-shell figcaption { color: #bdbdbd; }
+.blog-shell time, .blog-shell figcaption { color: var(--muted-text-color); }
 .blog-entry { border-top: 1px solid #383838; padding: 1.5rem 0; }
 .blog-article p, .blog-article figure, .blog-article ul, .blog-article ol { margin: 1.25rem 0; }
 .blog-article ul, .blog-article ol { padding-left: 1.5rem; }
